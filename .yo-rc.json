@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "at.fhv.ubertwo",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "uber_two",
+    "packageName": "at.fhv.ubertwo",
+    "packageFolder": "at/fhv/ubertwo",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "OGMzMjM2MGM2ZjdmMzU5YmVlN2ZjNTJmNTYzNjRmNmRkOWYwNDlmYWRiZmVlZjUzMTRiNWM3ZWQyMDQxMjE1MThlZjY4ZTA3YjgxYTE0Zjk1N2Y2ZTJlOTg2MWNhZjVjNTljZGYwODdjYTZjNjZjMTVhMTY1OWM4NGRhMzA0ZmE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1578492513255,
+    "testFrameworks": ["cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "de", "es"],
+    "blueprints": []
+  }
+}
