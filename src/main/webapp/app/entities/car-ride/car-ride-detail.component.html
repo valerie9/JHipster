@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="carRide">
+            <h2><span jhiTranslate="uberTwoApp.carRide.detail.title">Car Ride</span> {{carRide.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uberTwoApp.carRide.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{carRide.startTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.duration">Duration</span></dt>
+                <dd>
+                    <span>{{carRide.duration}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.distance">Distance</span></dt>
+                <dd>
+                    <span>{{carRide.distance}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.endPlace">End Place</span></dt>
+                <dd>
+                    <span>{{carRide.endPlace}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.startPlace">Start Place</span></dt>
+                <dd>
+                    <span>{{carRide.startPlace}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.cost">Cost</span></dt>
+                <dd>
+                    <span>{{carRide.cost}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.driver">Driver</span></dt>
+                <dd>
+                    <div *ngIf="carRide.driver">
+                        <a [routerLink]="['/driver', carRide.driver?.id, 'view']">{{carRide.driver?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.car">Car</span></dt>
+                <dd>
+                    <div *ngIf="carRide.car">
+                        <a [routerLink]="['/car', carRide.car?.id, 'view']">{{carRide.car?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.taxiOffice">Taxi Office</span></dt>
+                <dd>
+                    <div *ngIf="carRide.taxiOffice">
+                        <a [routerLink]="['/taxi-office', carRide.taxiOffice?.id, 'view']">{{carRide.taxiOffice?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.carRide.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="carRide.customer">
+                        <a [routerLink]="['/customer', carRide.customer?.id, 'view']">{{carRide.customer?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/car-ride', carRide.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

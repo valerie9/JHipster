@@ -1,0 +1,42 @@
+{
+    "name": "Customer",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "carRide",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "carRide"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "taxiOffice",
+            "otherEntityRelationshipName": "customer",
+            "relationshipName": "taxiOffice",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200108143940",
+    "entityTableName": "customer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

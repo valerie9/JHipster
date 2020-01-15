@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-car-ride-heading" jhiTranslate="uberTwoApp.carRide.home.createOrEditLabel">Create or edit a Car Ride</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.startTime" for="field_startTime">Start Time</label>
+                    <div class="input-group">
+                        <input id="field_startTime" type="text" class="form-control" name="startTime" ngbDatepicker  #startTimeDp="ngbDatepicker" formControlName="startTime"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="startTimeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.distance" for="field_distance">Distance</label>
+                    <input type="number" class="form-control" name="distance" id="field_distance"
+                           formControlName="distance"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.endPlace" for="field_endPlace">End Place</label>
+                    <input type="text" class="form-control" name="endPlace" id="field_endPlace"
+                           formControlName="endPlace"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.startPlace" for="field_startPlace">Start Place</label>
+                    <input type="text" class="form-control" name="startPlace" id="field_startPlace"
+                           formControlName="startPlace"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.cost" for="field_cost">Cost</label>
+                    <input type="number" class="form-control" name="cost" id="field_cost"
+                           formControlName="cost"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.driver" for="field_driver">Driver</label>
+                    <select class="form-control" id="field_driver" name="driver" formControlName="driver">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="driverOption.id === editForm.get('driver')!.value?.id ? editForm.get('driver')!.value : driverOption" *ngFor="let driverOption of drivers; trackBy: trackById">{{driverOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.car" for="field_car">Car</label>
+                    <select class="form-control" id="field_car" name="car" formControlName="car">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="carOption.id === editForm.get('car')!.value?.id ? editForm.get('car')!.value : carOption" *ngFor="let carOption of cars; trackBy: trackById">{{carOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.taxiOffice" for="field_taxiOffice">Taxi Office</label>
+                    <select class="form-control" id="field_taxiOffice" name="taxiOffice" formControlName="taxiOffice">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taxiOfficeOption.id === editForm.get('taxiOffice')!.value?.id ? editForm.get('taxiOffice')!.value : taxiOfficeOption" *ngFor="let taxiOfficeOption of taxioffices; trackBy: trackById">{{taxiOfficeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="uberTwoApp.carRide.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customer">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption" *ngFor="let customerOption of customers; trackBy: trackById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

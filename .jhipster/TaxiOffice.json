@@ -1,0 +1,45 @@
+{
+    "name": "TaxiOffice",
+    "fields": [
+        {
+            "fieldName": "town",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "taxiOffice",
+            "relationshipName": "car"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "driver",
+            "otherEntityRelationshipName": "taxiOffice",
+            "relationshipName": "driver"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "carRide",
+            "otherEntityRelationshipName": "taxiOffice",
+            "relationshipName": "carRide"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "taxiOffice",
+            "relationshipName": "customer"
+        }
+    ],
+    "changelogDate": "20200108143936",
+    "entityTableName": "taxi_office",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

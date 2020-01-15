@@ -1,0 +1,26 @@
+{
+  "uberTwoApp": {
+    "car": {
+      "home": {
+        "title": "Cars",
+        "createLabel": "Car erstellen",
+        "createOrEditLabel": "Car erstellen oder bearbeiten",
+        "notFound": "No Cars found"
+      },
+      "created": "Car erstellt mit ID {{ param }}",
+      "updated": "Car aktualisiert mit ID {{ param }}",
+      "deleted": "Car gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Car {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Car"
+      },
+      "licensePlate": "License Plate",
+      "name": "Name",
+      "seats": "Seats",
+      "carRide": "Car Ride",
+      "taxiOffice": "Taxi Office"
+    }
+  }
+}

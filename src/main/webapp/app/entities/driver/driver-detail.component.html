@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="driver">
+            <h2><span jhiTranslate="uberTwoApp.driver.detail.title">Driver</span> {{driver.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uberTwoApp.driver.name">Name</span></dt>
+                <dd>
+                    <span>{{driver.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.driver.age">Age</span></dt>
+                <dd>
+                    <span>{{driver.age}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.driver.salary">Salary</span></dt>
+                <dd>
+                    <span>{{driver.salary}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.driver.taxiOffice">Taxi Office</span></dt>
+                <dd>
+                    <div *ngIf="driver.taxiOffice">
+                        <a [routerLink]="['/taxi-office', driver.taxiOffice?.id, 'view']">{{driver.taxiOffice?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/driver', driver.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

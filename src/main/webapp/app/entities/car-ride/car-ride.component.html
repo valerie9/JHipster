@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="uberTwoApp.carRide.home.title">Car Rides</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-car-ride" [routerLink]="['/car-ride/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="uberTwoApp.carRide.home.createLabel">
+            Create a new Car Ride
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="carRides?.length === 0">
+        <span jhiTranslate="uberTwoApp.carRide.home.notFound">No carRides found</span>
+    </div>
+    <div class="table-responsive" *ngIf="carRides?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.startTime">Start Time</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.duration">Duration</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.distance">Distance</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.endPlace">End Place</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.startPlace">Start Place</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.cost">Cost</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.driver">Driver</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.car">Car</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.taxiOffice">Taxi Office</span></th>
+            <th scope="col" ><span jhiTranslate="uberTwoApp.carRide.customer">Customer</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let carRide of carRides ;trackBy: trackId">
+                <td><a [routerLink]="['/car-ride', carRide.id, 'view' ]">{{carRide.id}}</a></td>
+                <td>{{carRide.startTime | date:'mediumDate'}}</td>
+                <td>{{carRide.duration}}</td>
+                <td>{{carRide.distance}}</td>
+                <td>{{carRide.endPlace}}</td>
+                <td>{{carRide.startPlace}}</td>
+                <td>{{carRide.cost}}</td>
+                <td>
+                    <div *ngIf="carRide.driver">
+                        <a [routerLink]="['/driver', carRide.driver?.id, 'view' ]" >{{carRide.driver?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="carRide.car">
+                        <a [routerLink]="['/car', carRide.car?.id, 'view' ]" >{{carRide.car?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="carRide.taxiOffice">
+                        <a [routerLink]="['/taxi-office', carRide.taxiOffice?.id, 'view' ]" >{{carRide.taxiOffice?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="carRide.customer">
+                        <a [routerLink]="['/customer', carRide.customer?.id, 'view' ]" >{{carRide.customer?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/car-ride', carRide.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/car-ride', carRide.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(carRide)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

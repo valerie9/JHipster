@@ -1,0 +1,43 @@
+{
+    "name": "Car",
+    "fields": [
+        {
+            "fieldName": "licensePlate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seats",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "carRide",
+            "otherEntityRelationshipName": "car",
+            "relationshipName": "carRide",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "taxiOffice",
+            "otherEntityRelationshipName": "car",
+            "relationshipName": "taxiOffice",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200108143938",
+    "entityTableName": "car",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

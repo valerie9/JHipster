@@ -1,0 +1,26 @@
+{
+  "uberTwoApp": {
+    "driver": {
+      "home": {
+        "title": "Drivers",
+        "createLabel": "Driver erstellen",
+        "createOrEditLabel": "Driver erstellen oder bearbeiten",
+        "notFound": "No Drivers found"
+      },
+      "created": "Driver erstellt mit ID {{ param }}",
+      "updated": "Driver aktualisiert mit ID {{ param }}",
+      "deleted": "Driver gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Driver {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Driver"
+      },
+      "name": "Name",
+      "age": "Age",
+      "salary": "Salary",
+      "carRide": "Car Ride",
+      "taxiOffice": "Taxi Office"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity CarRide.
+    -->
+    <changeSet id="20200108143939-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="driver_id"
+                                 baseTableName="car_ride"
+                                 constraintName="fk_car_ride_driver_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="driver"/>
+
+        <addForeignKeyConstraint baseColumnNames="car_id"
+                                 baseTableName="car_ride"
+                                 constraintName="fk_car_ride_car_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="car"/>
+
+        <addForeignKeyConstraint baseColumnNames="taxi_office_id"
+                                 baseTableName="car_ride"
+                                 constraintName="fk_car_ride_taxi_office_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="taxi_office"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="car_ride"
+                                 constraintName="fk_car_ride_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+    </changeSet>
+</databaseChangeLog>

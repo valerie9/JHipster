@@ -1,0 +1,71 @@
+{
+    "name": "CarRide",
+    "fields": [
+        {
+            "fieldName": "startTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Duration"
+        },
+        {
+            "fieldName": "distance",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "endPlace",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startPlace",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cost",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "driver",
+            "otherEntityRelationshipName": "carRide",
+            "relationshipName": "driver",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "car",
+            "otherEntityRelationshipName": "carRide",
+            "relationshipName": "car",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "taxiOffice",
+            "otherEntityRelationshipName": "carRide",
+            "relationshipName": "taxiOffice",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "customer",
+            "otherEntityRelationshipName": "carRide",
+            "relationshipName": "customer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200108143939",
+    "entityTableName": "car_ride",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

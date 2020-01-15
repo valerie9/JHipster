@@ -42,6 +42,16 @@ public class CacheConfiguration {
             createCache(cm, at.fhv.ubertwo.domain.User.class.getName());
             createCache(cm, at.fhv.ubertwo.domain.Authority.class.getName());
             createCache(cm, at.fhv.ubertwo.domain.User.class.getName() + ".authorities");
+            createCache(cm, at.fhv.ubertwo.domain.TaxiOffice.class.getName());
+            createCache(cm, at.fhv.ubertwo.domain.TaxiOffice.class.getName() + ".cars");
+            createCache(cm, at.fhv.ubertwo.domain.TaxiOffice.class.getName() + ".drivers");
+            createCache(cm, at.fhv.ubertwo.domain.TaxiOffice.class.getName() + ".carRides");
+            createCache(cm, at.fhv.ubertwo.domain.TaxiOffice.class.getName() + ".customers");
+            createCache(cm, at.fhv.ubertwo.domain.Driver.class.getName());
+            createCache(cm, at.fhv.ubertwo.domain.Car.class.getName());
+            createCache(cm, at.fhv.ubertwo.domain.CarRide.class.getName());
+            createCache(cm, at.fhv.ubertwo.domain.Customer.class.getName());
+            createCache(cm, at.fhv.ubertwo.domain.Customer.class.getName() + ".carRides");
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,26 @@
+{
+  "uberTwoApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Customer erstellen",
+        "createOrEditLabel": "Customer erstellen oder bearbeiten",
+        "notFound": "No Customers found"
+      },
+      "created": "Customer erstellt mit ID {{ param }}",
+      "updated": "Customer aktualisiert mit ID {{ param }}",
+      "deleted": "Customer gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Customer {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "name": "Name",
+      "phoneNumber": "Phone Number",
+      "dateOfBirth": "Date Of Birth",
+      "carRide": "Car Ride",
+      "taxiOffice": "Taxi Office"
+    }
+  }
+}

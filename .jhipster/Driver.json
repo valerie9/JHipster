@@ -1,0 +1,43 @@
+{
+    "name": "Driver",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "salary",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "carRide",
+            "otherEntityRelationshipName": "driver",
+            "relationshipName": "carRide",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "taxiOffice",
+            "otherEntityRelationshipName": "driver",
+            "relationshipName": "taxiOffice",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200108143937",
+    "entityTableName": "driver",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,45 @@
+entity TaxiOffice {
+town String
+}
+
+entity Driver {
+name String
+age String
+salary Double
+
+}
+
+entity Car {
+licensePlate String,
+name String,
+seats Integer
+}
+
+entity CarRide {
+startTime LocalDate,
+duration Duration,
+distance Double,
+endPlace String,
+startPlace String,
+cost Double
+}
+
+entity Customer {
+name String,
+phoneNumber String,
+dateOfBirth LocalDate,
+}
+
+relationship OneToMany {
+TaxiOffice to Car,
+TaxiOffice to Driver,
+TaxiOffice to CarRide,
+TaxiOffice to Customer,
+Customer to CarRide
+}
+
+
+relationship OneToOne {
+CarRide to Driver,
+CarRide to Car
+}

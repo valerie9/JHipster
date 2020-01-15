@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="car">
+            <h2><span jhiTranslate="uberTwoApp.car.detail.title">Car</span> {{car.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="uberTwoApp.car.licensePlate">License Plate</span></dt>
+                <dd>
+                    <span>{{car.licensePlate}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.car.name">Name</span></dt>
+                <dd>
+                    <span>{{car.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.car.seats">Seats</span></dt>
+                <dd>
+                    <span>{{car.seats}}</span>
+                </dd>
+                <dt><span jhiTranslate="uberTwoApp.car.taxiOffice">Taxi Office</span></dt>
+                <dd>
+                    <div *ngIf="car.taxiOffice">
+                        <a [routerLink]="['/taxi-office', car.taxiOffice?.id, 'view']">{{car.taxiOffice?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/car', car.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

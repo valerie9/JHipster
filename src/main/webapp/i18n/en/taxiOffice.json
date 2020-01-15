@@ -1,0 +1,26 @@
+{
+  "uberTwoApp": {
+    "taxiOffice": {
+      "home": {
+        "title": "Taxi Offices",
+        "createLabel": "Create a new Taxi Office",
+        "createOrEditLabel": "Create or edit a Taxi Office",
+        "notFound": "No Taxi Offices found"
+      },
+      "created": "A new Taxi Office is created with identifier {{ param }}",
+      "updated": "A Taxi Office is updated with identifier {{ param }}",
+      "deleted": "A Taxi Office is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxi Office {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxi Office"
+      },
+      "town": "Town",
+      "car": "Car",
+      "driver": "Driver",
+      "carRide": "Car Ride",
+      "customer": "Customer"
+    }
+  }
+}

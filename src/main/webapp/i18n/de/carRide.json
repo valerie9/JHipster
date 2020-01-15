@@ -1,0 +1,31 @@
+{
+  "uberTwoApp": {
+    "carRide": {
+      "home": {
+        "title": "Car Rides",
+        "createLabel": "Car Ride erstellen",
+        "createOrEditLabel": "Car Ride erstellen oder bearbeiten",
+        "notFound": "No Car Rides found"
+      },
+      "created": "Car Ride erstellt mit ID {{ param }}",
+      "updated": "Car Ride aktualisiert mit ID {{ param }}",
+      "deleted": "Car Ride gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Car Ride {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Car Ride"
+      },
+      "startTime": "Start Time",
+      "duration": "Duration",
+      "distance": "Distance",
+      "endPlace": "End Place",
+      "startPlace": "Start Place",
+      "cost": "Cost",
+      "driver": "Driver",
+      "car": "Car",
+      "taxiOffice": "Taxi Office",
+      "customer": "Customer"
+    }
+  }
+}
