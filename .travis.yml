@@ -18,6 +18,7 @@ env:
     - JHI_DISABLE_WEBPACK_LOGS=true
     - NG_CLI_ANALYTICS="false"
     - MAVEN_USER_HOME=$HOME/.m2/repository/
+    - SONAR_TOKEN=9cf4af7e1520825cc635c53810fe22b5448a8434
 before_install:
   - |
     if [[ $JHI_JDK = '8' ]]; then
@@ -44,17 +45,8 @@ script:
   - ./mvnw -ntp checkstyle:check
   - ./mvnw -ntp clean verify
   - ./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test' -Dmaven.repo.local=$MAVEN_USER_HOME
-  - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
+  - if [ $TRAVIS_PULL_REQUEST == "false" ]; then ./mvnw -ntp org.jacoco:jacoco-maven-plugin:prepare-agent initialize sonar:sonar -Dsonar.organization=valerie9 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN; fi
   - ./mvnw -ntp verify -Pprod -DskipTests
-addons:
-sonarcloud:
-  organization: "valerie9"
-  token:
-    secure: $SONAR_TOKEN # encrypted value of your token
-
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 notifications:
   webhooks:
     on_success: change # options: [always|never|change] default: always
