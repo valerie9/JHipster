@@ -18,7 +18,6 @@ env:
     - JHI_DISABLE_WEBPACK_LOGS=true
     - NG_CLI_ANALYTICS="false"
     - MAVEN_USER_HOME=$HOME/.m2/repository/
-    - SONAR_TOKEN=9cf4af7e1520825cc635c53810fe22b5448a8434
 before_install:
   - |
     if [[ $JHI_JDK = '8' ]]; then
