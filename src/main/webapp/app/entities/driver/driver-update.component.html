@@ -1,7 +1,8 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-driver-heading" jhiTranslate="uberTwoApp.driver.home.createOrEditLabel">Create or edit a Driver</h2>
+            <h2 id="jhi-driver-heading">Fahren mit Uber!</h2>
+            <h5>Verdiene Geld nach deinem eigenen Zeitplan.</h5>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!editForm.get('id')!.value">
@@ -9,24 +10,25 @@
                     <input type="text" class="form-control" id="id" name="id" formControlName="id"
                         readonly />
                 </div>
+                <br>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="uberTwoApp.driver.name" for="field_name">Name</label>
+                    <label class="form-control-label" for="field_name">Name</label>
                     <input type="text" class="form-control" name="name" id="field_name"
                            formControlName="name"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="uberTwoApp.driver.age" for="field_age">Age</label>
+                    <label class="form-control-label" for="field_age">Alter</label>
                     <input type="text" class="form-control" name="age" id="field_age"
                            formControlName="age"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="uberTwoApp.driver.salary" for="field_salary">Salary</label>
+                    <label class="form-control-label" for="field_salary">Kosten pro km</label>
                     <input type="number" class="form-control" name="salary" id="field_salary"
                            formControlName="salary"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="uberTwoApp.driver.taxiOffice" for="field_taxiOffice">Taxi Office</label>
+                    <label class="form-control-label" for="field_taxiOffice">Stadt</label>
                     <select class="form-control" id="field_taxiOffice" name="taxiOffice" formControlName="taxiOffice">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="taxiOfficeOption.id === editForm.get('taxiOffice')!.value?.id ? editForm.get('taxiOffice')!.value : taxiOfficeOption" *ngFor="let taxiOfficeOption of taxioffices; trackBy: trackById">{{taxiOfficeOption.id}}</option>
@@ -35,10 +37,10 @@
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                    <fa-icon [icon]="'hiking'"></fa-icon>&nbsp;<span >Doch keine Lust</span>
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'car'"></fa-icon>&nbsp;<span>Los gehts</span>
                 </button>
             </div>
         </form>
