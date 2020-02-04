@@ -19,6 +19,7 @@
     <include file="config/liquibase/changelog/20200108143938_added_entity_Car.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200108143939_added_entity_CarRide.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200108143940_added_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200204094651_added_entity_Book.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200108143937_added_entity_constraints_Driver.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200108143938_added_entity_constraints_Car.xml" relativeToChangelogFile="false"/>

@@ -52,6 +52,7 @@ public class CacheConfiguration {
             createCache(cm, at.fhv.ubertwo.domain.CarRide.class.getName());
             createCache(cm, at.fhv.ubertwo.domain.Customer.class.getName());
             createCache(cm, at.fhv.ubertwo.domain.Customer.class.getName() + ".carRides");
+            createCache(cm, at.fhv.ubertwo.domain.Book.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
