@@ -13,6 +13,7 @@
         "carRide": "Car Ride",
         "customer": "Customer",
         "book": "Book",
+        "review": "Review",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

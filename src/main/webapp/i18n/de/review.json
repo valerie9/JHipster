@@ -1,0 +1,22 @@
+{
+  "uberTwoApp": {
+    "review": {
+      "home": {
+        "title": "Reviews",
+        "createLabel": "Review erstellen",
+        "createOrEditLabel": "Review erstellen oder bearbeiten",
+        "notFound": "No Reviews found"
+      },
+      "created": "Review erstellt mit ID {{ param }}",
+      "updated": "Review aktualisiert mit ID {{ param }}",
+      "deleted": "Review gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Review {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Review"
+      },
+      "message": "Message"
+    }
+  }
+}
